@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Vendor} from "./vendor.model";
 import {StaticDataSource} from "./static.datasource";
+import {Review} from "./review.model";
 
 
 @Injectable()
@@ -21,11 +22,21 @@ export class VendorRepository {
 
     }
 
+    getVendorsByName(vendorname: string = null): Vendor[]{
+        return this.vendors.filter(p => vendorname==null || vendorname == p.vendorName);
+    }
+
     getVendor (id: number): Vendor {
         return this.vendors.find(p => p.vendorId == id);
     }
 
     getCategories(): string[] {
         return this.categories;
+    }
+
+    getReview(id: string): Vendor {
+
+        return this.vendors.find(p => Number(p.reviewId)==Number(id));
+
     }
 }

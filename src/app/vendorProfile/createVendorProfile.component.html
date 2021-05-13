@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <h1>Create Vendor Profile</h1>
+</div>
+
+<form novalidate #form="ngForm" (ngSubmit)="submitProfile(profile)">
+
+    <div class="form-group">
+        <label for="businessName">Your Business Name</label>
+
+        <input type="text" id="businessName" name="businessName" [(ngModel)]="vendor.vendorName" required>
+    </div>
+
+    <div class="form-group">
+        <label for="businessService">Your Business Service</label>
+
+        <input type="text" id="businessService" name="businessService" [(ngModel)]="vendor.vendorService" required>
+    </div>
+
+    <div class="form-group">
+        <label for="businessCategory">Your Business Category</label>
+
+        <input type="text" id="businessCategory" name="businessCategory" [(ngModel)]="vendor.vendorCategory" required>
+    </div>
+
+    <div class="form-group">
+        <label for="businessAddress">Your Business Address (include state, city, and Zip Code)</label>
+
+        <input type="text" id="businessAddress" name="businessAddress" [(ngModel)]="vendor.vendorAddress" required>
+    </div>
+
+    <div class="form-group">
+        <label for="businessNumber">Your Business Phone Number (xxx-xxx-xxxx)</label>
+
+        <input type="text" id="businessNumber" name="businessNumber" [(ngModel)]="vendor.vendorNumber" required>
+    </div>
+
+    <div class="form-group">
+        <label for="businessPrice">Service Price You Would Like to Charge</label>
+
+        <input type="number" id="businessNumber" name="businessNumber" [(ngModel)]="vendor.price" required>
+    </div>
+
+    <div class="form-group">
+        <label for="profilepic">Upload a Profile Picture</label>
+
+        <input type="file" id="profilepic" name="profilepic" accept="image/png, image/jpeg" [(ngModel)]="vendor.image" required>
+    </div>
+</form>

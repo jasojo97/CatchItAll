@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-primary text-white">
+            <a class="navbar-brand">CATCH IT ALL</a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="orderSent=='Ordered'" class="m-2 text-center">
+    <h2>Thank you for placing your order!!!!</h2>
+    <p>We'll deliver your service as early as we can</p>
+    <button class="btn btn-primary" routerLink="/">Return to Main Store</button>
+</div>
+<form *ngIf="orderSent!='Ordered'" #form="ngForm" novalidate (ngSubmit)="submitFinalServiceOrder(form)" class="m-2">
+    <div class="form-group">
+        <label>What is Today's Date You Ordered?</label>
+        <input class="form-control" #name="ngModel" name="name" [(ngModel)]="order.orderDate3" required>
+
+    </div>
+
+    <div class="form-group">
+        <label>Status: Plese type ordered when you are done</label>
+        <input class="form-control" [(ngModel)] = "order.status4">
+    </div>
+
+    <div class="form-group">
+        <label>Please input the date you would like your service/product delivered</label>
+        <input class="form-control" [(ngModel)] = "order.shmpmentDate5">
+    </div>
+
+    <div class="form-group">
+        <label>Please enter the address you would like your project delivered to</label>
+        <input class="form-control" [(ngModel)] = "order.address6">
+    </div>
+</form>

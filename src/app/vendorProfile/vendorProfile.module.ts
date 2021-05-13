@@ -2,15 +2,16 @@ import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
 import {ModelModule} from "../model/model.module";
-import {StoreComponent} from "./store.component";
-import {CounterDirective} from "./counter.directive";
-import {CartSummaryComponent} from "./cartSummary.component";
 import {RouterModule} from "@angular/router";
+import {CreateVendorProfileComponent} from "./createVendorProfile.component";
+import {VendorProfileComponent} from "./vendorProfile.component";
+
+
 
 @NgModule({
     imports: [ModelModule, BrowserModule, FormsModule, RouterModule],
-    declarations: [StoreComponent, CounterDirective, CartSummaryComponent],
-    exports: [StoreComponent]
+    declarations: [CreateVendorProfileComponent, VendorProfileComponent],
+    exports: [VendorProfileComponent]
 })
 
-export class StoreModule { }
+export class VendorProfileModule { }
